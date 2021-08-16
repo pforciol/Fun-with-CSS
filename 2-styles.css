@@ -1,0 +1,68 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+    visibility: hidden;
+    padding: 0;
+    margin: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle,
+.toggle-label {
+    display: flex;
+    flex-direction: row;
+    vertical-align: baseline;
+    align-items: center;
+}
+
+.toggle-inner {
+    width: 60px;
+    height: 20px;
+    border: 1.5px solid grey;
+    border-radius: 25px;
+}
+
+.toggle-switch {
+    width: 25px;
+    height: 25px;
+    border: 1.5px solid grey;
+    border-radius: 100%;
+}
+
+input:checked ~ .toggle-label .toggle-inner {
+    background-color: #d8003b;
+}
+
+input ~ .toggle-label .toggle-inner {
+    background-color: lightgrey;
+}
+
+input:checked ~ .toggle-label .toggle-switch {
+    position: absolute;
+    left: 45px;
+    background-color: white;
+}
+
+input ~ .toggle-label .toggle-switch {
+    position: absolute;
+    background-color: white;
+}
+
+input:checked ~ .toggle-label::after {
+    content: "Yes";
+    position: absolute;
+    font-size: 0.9rem;
+    color: white;
+    padding-left: 10px;
+}
+
+input ~ .toggle-label::after {
+    content: "No";
+    position: absolute;
+    font-size: 0.9rem;
+    color: grey;
+    padding-left: 34px;
+}
